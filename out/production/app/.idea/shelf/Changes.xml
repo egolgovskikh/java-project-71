@@ -1,0 +1,59 @@
+<changelist name="Changes" date="1711808721935" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/shelved.patch" />
+  <option name="DESCRIPTION" value="Changes" />
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/classes/java/main/hexlet/code/App.class" />
+    <option name="AFTER_PATH" value="app/build/classes/java/main/hexlet/code/App.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/App.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/install/app/lib/app-1.0-SNAPSHOT.jar" />
+    <option name="AFTER_PATH" value="app/build/install/app/lib/app-1.0-SNAPSHOT.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/app-1.0-SNAPSHOT.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/libs/app-1.0-SNAPSHOT.jar" />
+    <option name="AFTER_PATH" value="app/build/libs/app-1.0-SNAPSHOT.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/app-1.0-SNAPSHOT1.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value="app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/.gradle/7.5.1/checksums/checksums.lock" />
+    <option name="AFTER_PATH" value="app/.gradle/7.5.1/checksums/checksums.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/checksums.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/.gradle/7.5.1/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value="app/.gradle/7.5.1/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/.gradle/7.5.1/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value="app/.gradle/7.5.1/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/.gradle/7.5.1/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value="app/.gradle/7.5.1/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/.gradle/7.5.1/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value="app/.gradle/7.5.1/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="app/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value="app/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Changes/resourceHashesCache.bin" />
+  </binary>
+</changelist>
