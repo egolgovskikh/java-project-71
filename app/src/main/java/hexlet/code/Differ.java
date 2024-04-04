@@ -1,11 +1,15 @@
 package hexlet.code;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Differ {
-    public static String generate(Map<String, Object> map1, Map<String, Object> map2) {
+    public static String generate(String filepath1, String filepath2, String format) throws IOException {
+        Map<String, Object> map1 = FileUtils.readFile(filepath1);
+        Map<String, Object> map2 = FileUtils.readFile(filepath2);
+
         Set<String> keys = new TreeSet<>(map1.keySet());
         keys.addAll(map2.keySet());
 

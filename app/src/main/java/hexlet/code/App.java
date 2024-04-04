@@ -54,8 +54,9 @@ public class App implements Callable<Object> {
     public String call() throws IOException {
         try {
             String result = Differ.generate(
-                    FileUtils.readFile(filepath1),
-                    FileUtils.readFile(filepath2)
+                    filepath1,
+                    filepath2,
+                    format
             );
             System.out.println(result);
             return result;
