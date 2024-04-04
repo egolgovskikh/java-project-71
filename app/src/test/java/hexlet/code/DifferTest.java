@@ -3,6 +3,8 @@ package hexlet.code;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,15 +17,7 @@ class DifferTest {
                 "src/test/resources/json/testFile2.json",
                 "stylish"
         );
-        String expected = """
-                {
-                  - follow: false
-                    host: hexlet.io
-                  - proxy: 123.234.53.22
-                  - timeout: 50
-                  + timeout: 20
-                  + verbose: true
-                }""";
+        String expected = new String(Files.readAllBytes(Paths.get("src/test/resources/expectedResult")));
         assertEquals(expected, actual);
     }
 
@@ -33,15 +27,7 @@ class DifferTest {
                 "src/test/resources/json/testFile1.json",
                 "src/test/resources/json/testFile2.json"
         );
-        String expected = """
-                {
-                  - follow: false
-                    host: hexlet.io
-                  - proxy: 123.234.53.22
-                  - timeout: 50
-                  + timeout: 20
-                  + verbose: true
-                }""";
+        String expected = new String(Files.readAllBytes(Paths.get("src/test/resources/expectedResult")));
         assertEquals(expected, actual);
     }
 
@@ -52,15 +38,7 @@ class DifferTest {
                 "src/test/resources/yml/testFile2.yml",
                 "stylish"
         );
-        String expected = """
-                {
-                  - follow: false
-                    host: hexlet.io
-                  - proxy: 123.234.53.22
-                  - timeout: 50
-                  + timeout: 20
-                  + verbose: true
-                }""";
+        String expected = new String(Files.readAllBytes(Paths.get("src/test/resources/expectedResult")));
         assertEquals(expected, actual);
     }
 }

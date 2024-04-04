@@ -40,11 +40,24 @@ public class Differ {
             return;
         }
 
-        if (map1.get(key).equals(map2.get(key))) {
-            addString(result, ' ', key, map1.get(key));
+        Object value1 = map1.get(key);
+        Object value2 = map2.get(key);
+
+        if (value1 == null && value2 == null) {
+            addString(result, ' ', key, null);
+            return;
+        }
+        if (value1 == null || value2 == null) {
+            addString(result, '-', key, value1);
+            addString(result, '+', key, value2);
+            return;
+        }
+
+        if (value1.equals(value2)) {
+            addString(result, ' ', key, value1);
         } else {
-            addString(result, '-', key, map1.get(key));
-            addString(result, '+', key, map2.get(key));
+            addString(result, '-', key, value1);
+            addString(result, '+', key, value2);
         }
     }
 

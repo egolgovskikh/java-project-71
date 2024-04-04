@@ -15,7 +15,7 @@ class ParserTest {
     void testReadJsonFile() {
         Map<String, Object> actual;
         try {
-            actual = Parser.readFile("src/test/resources/json/testFile1.json");
+            actual = Parser.readFile("src/test/resources/json/testFile3.json");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -32,7 +32,7 @@ class ParserTest {
     void testReadYmlFile() {
         Map<String, Object> actual;
         try {
-            actual = Parser.readFile("src/test/resources/yml/testFile1.yml");
+            actual = Parser.readFile("src/test/resources/yml/testFile3.yml");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
