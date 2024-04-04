@@ -3,11 +3,10 @@ file2 := filepath2
 run-dist:
 	./build/install/app/bin/app $(file1) $(file2)
 
-build: #A build of the app
+build:
 	./gradlew installDist
 
 report:
 	./gradlew jacocoTestReport
-
 
 .PHONY: build
