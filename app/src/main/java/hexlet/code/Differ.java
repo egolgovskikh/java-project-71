@@ -22,6 +22,10 @@ public class Differ {
         return result.toString();
     }
 
+    public static String generate(String filepath1, String filepath2) throws IOException {
+        return generate(filepath1, filepath2, "plain");
+    }
+
     private static void addCompare(
             StringBuilder result,
             Map<String, Object> map1,
