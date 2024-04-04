@@ -14,8 +14,8 @@ public class AppTest {
     @Test
     public void testCall() throws IOException {
         App app = new App();
-        app.filepath1 = "src/test/resources/testFile1.json";
-        app.filepath2 = "src/test/resources/testFile2.json";
+        app.filepath1 = "src/test/resources/json/testFile1.json";
+        app.filepath2 = "src/test/resources/json/testFile2.json";
 
         String actual = app.call();
         String expected = new String(Files.readAllBytes(Paths.get("src/test/resources/expectedResult")));
@@ -26,8 +26,8 @@ public class AppTest {
     @Test
     public void testCallWithNonExistentFile() {
         App app = new App();
-        app.filepath1 = "src/test/resources/nonExistentFile.json";
-        app.filepath2 = "src/test/resources/testFile2.json";
+        app.filepath1 = "src/test/resources/json/nonExistentFile.json";
+        app.filepath2 = "src/test/resources/json/testFile2.json";
 
         assertThrows(IOException.class, app::call);
     }

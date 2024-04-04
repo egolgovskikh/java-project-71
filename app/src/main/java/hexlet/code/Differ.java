@@ -7,8 +7,8 @@ import java.util.TreeSet;
 
 public class Differ {
     public static String generate(String filepath1, String filepath2, String format) throws IOException {
-        Map<String, Object> map1 = FileUtils.readFile(filepath1);
-        Map<String, Object> map2 = FileUtils.readFile(filepath2);
+        Map<String, Object> map1 = Parser.readFile(filepath1);
+        Map<String, Object> map2 = Parser.readFile(filepath2);
 
         Set<String> keys = new TreeSet<>(map1.keySet());
         keys.addAll(map2.keySet());
@@ -23,7 +23,7 @@ public class Differ {
     }
 
     public static String generate(String filepath1, String filepath2) throws IOException {
-        return generate(filepath1, filepath2, "plain");
+        return generate(filepath1, filepath2, "stylish");
     }
 
     private static void addCompare(

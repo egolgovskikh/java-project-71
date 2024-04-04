@@ -61,8 +61,7 @@ public class App implements Callable<Object> {
             System.out.println(result);
             return result;
         } catch (IOException e) {
-            System.out.println("Ошибка ввода пути к файлу");
-            throw new IOException("Ошибка ввода пути к файлу");
+            throw new IOException("Error entering filepath: " + e.getMessage());
         }
     }
 }
