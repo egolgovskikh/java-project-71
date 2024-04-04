@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ParserTest {
 
@@ -28,7 +29,7 @@ class ParserTest {
     }
 
     @Test
-    void testReadFile() {
+    void testReadYmlFile() {
         Map<String, Object> actual;
         try {
             actual = Parser.readFile("src/test/resources/yml/testFile1.yml");
@@ -42,5 +43,10 @@ class ParserTest {
         expected.put("follow", false);
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void testReadUnsupportedExtensionFile() {
+        assertThrows(IOException.class, () -> Parser.readFile("src/test/resources/txt/testFile.txt"));
     }
 }
