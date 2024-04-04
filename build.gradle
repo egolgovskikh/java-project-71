@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
+    id 'jacoco'
 }
 
 group 'hexlet.code'
@@ -21,6 +22,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
 }
 
 application {
@@ -30,4 +32,13 @@ application {
 compileJava {
     options.release = 19
     options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
+}
+
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.required = true
+    }
 }

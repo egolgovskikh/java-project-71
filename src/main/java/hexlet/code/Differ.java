@@ -18,7 +18,12 @@ public class Differ {
         return result.toString();
     }
 
-    private static void addCompare(StringBuilder result, Map<String, Object> map1, Map<String, Object> map2, String key) {
+    private static void addCompare(
+            StringBuilder result,
+            Map<String, Object> map1,
+            Map<String, Object> map2,
+            String key
+    ) {
         boolean isPresentInMap1 = map1.containsKey(key);
         boolean isPresentInMap2 = map2.containsKey(key);
 

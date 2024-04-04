@@ -14,7 +14,7 @@ class FileUtilsTest {
     void testReadFile() {
         Map<String, Object> actual;
         try {
-            actual = FileUtils.readFile("src/test/resources/testFile.json");
+            actual = FileUtils.readFile("src/test/resources/testFile1.json");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -51,16 +51,17 @@ public class App implements Callable<Object> {
     }
 
     @Override
-    public Object call() {
+    public String call() throws IOException {
         try {
             String result = Differ.generate(
                     FileUtils.readFile(filepath1),
                     FileUtils.readFile(filepath2)
             );
             System.out.println(result);
+            return result;
         } catch (IOException e) {
             System.out.println("Ошибка ввода пути к файлу");
+            throw new IOException("Ошибка ввода пути к файлу");
         }
-        return null;
     }
 }
