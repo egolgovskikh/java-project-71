@@ -28,22 +28,21 @@ public class Differ {
     ) {
         boolean isPresentInMap1 = map1.containsKey(key);
         boolean isPresentInMap2 = map2.containsKey(key);
-        if (isPresentInMap1 && isPresentInMap2) {
-            boolean isValuesEquals = map1.get(key).equals(map2.get(key));
-            if (isValuesEquals) {
-                addInString(result, ' ', key, map1.get(key));
-            } else {
-                addInString(result, '-', key, map1.get(key));
-                addInString(result, '+', key, map2.get(key));
-            }
-            return;
-        }
+
         if (!isPresentInMap1 && isPresentInMap2) {
             addInString(result, '+', key, map2.get(key));
             return;
         }
-        if (isPresentInMap1) {
+        if (isPresentInMap1 && !isPresentInMap2) {
             addInString(result, '-', key, map1.get(key));
+            return;
+        }
+
+        if (map1.get(key).equals(map2.get(key))) {
+            addInString(result, ' ', key, map1.get(key));
+        } else {
+            addInString(result, '-', key, map1.get(key));
+            addInString(result, '+', key, map2.get(key));
         }
     }
 }
