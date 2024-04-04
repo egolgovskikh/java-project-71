@@ -12,6 +12,7 @@ public class FileUtils {
     public static Map<String, Object> readFile(String filepath) throws IOException {
         File file = new File(filepath);
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(file, new TypeReference<>() {});
+        return objectMapper.readValue(file, new TypeReference<>() {
+        });
     }
 }

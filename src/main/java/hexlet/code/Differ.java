@@ -13,19 +13,20 @@ public class Differ {
         for (String key : keys) {
             boolean isPresentInMap1 = map1.containsKey(key);
             boolean isPresentInMap2 = map2.containsKey(key);
-            if (isPresentInMap1) {
-                if (isPresentInMap2) {
-                    if (map1.get(key).equals(map2.get(key))) {
-                        result.append("\n    ").append(key).append(": ").append(map1.get(key));
-                    } else {
-                        result.append("\n  - ").append(key).append(": ").append(map1.get(key));
-                        result.append("\n  + ").append(key).append(": ").append(map2.get(key));
-                    }
+
+            if (isPresentInMap1 && isPresentInMap2) {
+                if (map1.get(key).equals(map2.get(key))) {
+                    result.append("\n    ").append(key).append(": ").append(map1.get(key));
                 } else {
                     result.append("\n  - ").append(key).append(": ").append(map1.get(key));
+                    result.append("\n  + ").append(key).append(": ").append(map2.get(key));
                 }
-            } else {
+            }
+            if (!isPresentInMap1 && isPresentInMap2) {
                 result.append("\n  + ").append(key).append(": ").append(map2.get(key));
+            }
+            if (isPresentInMap1 && !isPresentInMap2) {
+                result.append("\n  - ").append(key).append(": ").append(map1.get(key));
             }
         }
         result.append("\n}");
