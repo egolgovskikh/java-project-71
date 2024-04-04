@@ -20,21 +20,12 @@ public class Differ {
         return result.toString();
     }
 
-    private static void addKey(
-            StringBuilder result,
-            Map<String, Object> map1,
-            Map<String, Object> map2,
-            String key
-    ) {
+    private static void addKey(StringBuilder result, Map<String, Object> map1, Map<String, Object> map2, String key) {
         boolean isPresentInMap1 = map1.containsKey(key);
         boolean isPresentInMap2 = map2.containsKey(key);
 
-        if (!isPresentInMap1 && isPresentInMap2) {
-            addInString(result, '+', key, map2.get(key));
-            return;
-        }
-        if (isPresentInMap1 && !isPresentInMap2) {
-            addInString(result, '-', key, map1.get(key));
+        if (isPresentInMap1 != isPresentInMap2) {
+            addInString(result, isPresentInMap1 ? '-' : '+', key, isPresentInMap1 ? map1.get(key) : map2.get(key));
             return;
         }
 
