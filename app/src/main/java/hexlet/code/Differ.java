@@ -29,12 +29,7 @@ public class Differ {
             return result.substring(0, result.lastIndexOf("\n"));
         }
         if (format.equals("json")) { //todo
-            StringBuilder result = new StringBuilder("{");
-            for (String key : keys) {
-                addCompareStylish(result, map1, map2, key);
-            }
-            result.append("\n}");
-            return result.toString();
+            return "{}";
         }
         throw new IOException("Unsupported format: " + format);
     }
