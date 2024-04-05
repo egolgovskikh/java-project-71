@@ -26,7 +26,7 @@ public class Differ {
             for (String key : keys) {
                 addComparePlain(result, map1, map2, key);
             }
-            return result.toString();
+            return result.substring(0, result.lastIndexOf("\n"));
         }
         throw new IOException("Unsupported format: " + format);
     }
