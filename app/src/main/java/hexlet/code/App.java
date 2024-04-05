@@ -37,7 +37,7 @@ public class App implements Callable<Object> {
             description = "output format [default: stylish]",
             paramLabel = "format"
     )
-    String format;
+    String format = "stylish";
 
     @Parameters(index = "0")
     String filepath1;

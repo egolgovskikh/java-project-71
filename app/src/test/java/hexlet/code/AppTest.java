@@ -18,7 +18,7 @@ public class AppTest {
         app.filepath2 = "src/test/resources/json/testFile2.json";
 
         String actual = app.call();
-        String expected = new String(Files.readAllBytes(Paths.get("src/test/resources/expectedResult")));
+        String expected = new String(Files.readAllBytes(Paths.get("src/test/resources/expectedResultStylish")));
 
         assertEquals(expected, actual);
     }
