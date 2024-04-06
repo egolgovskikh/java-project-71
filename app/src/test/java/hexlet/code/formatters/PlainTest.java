@@ -5,15 +5,15 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class PlainTest {
 
     @Test
-    void testGetFormattedValueNull () {
+    void testGetFormattedValueNull() {
         Map<String, Object> map = new HashMap<>();
         String key = "key";
         map.put(key, null);
-        assertNull( Plain.getFormattedValue(map, key));
+        assertNull(Plain.getFormattedValue(map, key));
     }
 }

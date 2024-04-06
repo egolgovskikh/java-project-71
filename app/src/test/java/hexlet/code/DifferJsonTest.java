@@ -27,7 +27,7 @@ class DifferJsonTest {
                 jsonFile2,
                 "stylish"
         );
-        String expected = new String(Files.readAllBytes(Paths.get(resourceDirectory,"expectedResultStylish.txt")));
+        String expected = new String(Files.readAllBytes(Paths.get(resourceDirectory, "expectedResultStylish.txt")));
         assertEquals(expected, actual);
     }
 
@@ -38,7 +38,7 @@ class DifferJsonTest {
                 jsonFile2,
                 "plain"
         );
-        String expected = new String(Files.readAllBytes(Paths.get(resourceDirectory,"expectedResultPlain.txt")));
+        String expected = new String(Files.readAllBytes(Paths.get(resourceDirectory, "expectedResultPlain.txt")));
         assertEquals(expected, actual);
     }
 
@@ -48,7 +48,7 @@ class DifferJsonTest {
                 jsonFile1,
                 jsonFile2
         );
-        String expected = new String(Files.readAllBytes(Paths.get(resourceDirectory,"expectedResultStylish.txt")));
+        String expected = new String(Files.readAllBytes(Paths.get(resourceDirectory, "expectedResultStylish.txt")));
         assertEquals(expected, actual);
     }
 
@@ -59,7 +59,7 @@ class DifferJsonTest {
                 jsonFile2,
                 "json"
         );
-        String expected = new String(Files.readAllBytes(Paths.get(resourceDirectory,"expectedResultJson.json")));
+        String expected = new String(Files.readAllBytes(Paths.get(resourceDirectory, "expectedResultJson.json")));
         assertEquals(expected, actual);
     }
 }
