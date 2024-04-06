@@ -1,15 +1,14 @@
-file1 := filepath1
-file2 := filepath2
 run-dist:
-	./build/install/app/bin/app $(file1) $(file2)
+	./build/install/app/bin/app -h
 
 build:
 	./gradlew installDist
 
-report:
-	./gradlew jacocoTestReport
 
 test:
 	./gradlew test
+
+report:
+	./gradlew jacocoTestReport
 
 .PHONY: build
