@@ -3,6 +3,7 @@ package hexlet.code;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,12 +11,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ParserTest {
+    private final String resourceDirectory = Paths.get("src", "test", "resources").toString();
 
     @Test
     void testReadJsonFile() {
         Map<String, Object> actual;
         try {
-            actual = Parser.readFile("src/test/resources/json/testFile3.json");
+
+            actual = Parser.readFile(Paths.get(resourceDirectory, "testFile3.json").toString());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -30,6 +33,6 @@ class ParserTest {
 
     @Test
     void testReadUnsupportedExtensionFile() {
-        assertThrows(IOException.class, () -> Parser.readFile("src/test/resources/txt/testFile.txt"));
+        assertThrows(IOException.class, () -> Parser.readFile(Paths.get(resourceDirectory, "testFile.txt").toString()));
     }
 }
