@@ -26,11 +26,11 @@ public class Plain {
         Object value2 = map2.get(key);
 
         if (isPresentInMap1 != isPresentInMap2) {
+            result.append("Property '").append(key);
             if (isPresentInMap1) {
-                result.append("Property '").append(key).append("' was removed\n");
+                result.append("' was removed\n");
             } else {
-                result.append("Property '").append(key).append("' was added with value: ")
-                        .append(getFormattedValue(map2, key)).append("\n");
+                result.append("' was added with value: ").append(getFormattedValue(map2, key)).append("\n");
             }
             return;
         }
@@ -38,13 +38,7 @@ public class Plain {
         if (value1 == null && value2 == null) {
             return;
         }
-        if (value1 == null || value2 == null) {
-            result.append("Property '").append(key).append("' was updated. From ").append(getFormattedValue(map1, key))
-                    .append(" to ").append(getFormattedValue(map2, key)).append("\n");
-            return;
-        }
-
-        if (!value1.equals(value2)) {
+        if (value1 == null || !value1.equals(value2)) {
             result.append("Property '").append(key).append("' was updated. From ").append(getFormattedValue(map1, key))
                     .append(" to ").append(getFormattedValue(map2, key)).append("\n");
         }
