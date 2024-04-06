@@ -9,15 +9,15 @@ import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AppTest {
+public final class AppTest {
 
     private final String resourceDirectory = Paths.get("src", "test", "resources").toString();
     private final App app = new App();
 
     @BeforeEach
     public void beforeEach() {
-        app.filepath1 = Paths.get(resourceDirectory, "testFile1.json").toString();
-        app.filepath2 = Paths.get(resourceDirectory, "testFile2.json").toString();
+        app.setFilepath1(Paths.get(resourceDirectory, "testFile1.json").toString());
+        app.setFilepath2(Paths.get(resourceDirectory, "testFile2.json").toString());
     }
 
     @Test

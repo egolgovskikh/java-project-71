@@ -4,6 +4,7 @@ import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
+import lombok.Setter;
 
 import java.io.IOException;
 import java.util.concurrent.Callable;
@@ -16,33 +17,34 @@ import java.util.concurrent.Callable;
                       filepath1         path to first file
                       filepath2         path to second file"""
 )
-public class App implements Callable<Object> {
+@Setter
+public final class App implements Callable<Object> {
 
     @Option(
             names = {"-h", "--help"},
             description = "Show this help message and exit.",
             usageHelp = true
     )
-    boolean help;
+    private boolean help;
 
     @Option(
             names = {"-V", "--version"},
             description = "Print version information and exit.",
             versionHelp = true
     )
-    boolean version;
+    private boolean version;
 
     @Option(
             names = {"-f", "--format"},
             description = "output format [default: stylish]",
             paramLabel = "format"
     )
-    String format = "stylish";
+    private String format = "stylish";
 
     @Parameters(index = "0")
-    String filepath1;
+    private String filepath1;
     @Parameters(index = "1")
-    String filepath2;
+    private String filepath2;
 
     public static void main(String[] args) {
         App app = new App();
