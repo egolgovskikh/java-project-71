@@ -6,16 +6,13 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Map;
 
 public class Parser {
 
     public static Map<String, Object> readFile(String filepath) throws IOException {
         File file = new File(filepath);
-        String extension = Files.probeContentType(Path.of(filepath));
-        return getObjectMapper(extension).readValue(file, new TypeReference<>() {
+        return getObjectMapper(getFileFormat(filepath)).readValue(file, new TypeReference<>() {
         });
     }
 
@@ -24,9 +21,19 @@ public class Parser {
             throw new IOException("Unsupported file extension: null");
         }
         return switch (extension) {
-            case "application/json" -> new ObjectMapper();
-            case "application/x-yaml" -> new YAMLMapper();
+            case "json" -> new ObjectMapper();
+            case "yml" -> new YAMLMapper();
             default -> throw new IOException("Unsupported file extension: " + extension);
         };
+    }
+
+    private static String getFileFormat(String filepath) {
+        if (filepath.endsWith(".yml")) {
+            return "yml";
+        }
+        if (filepath.endsWith(".json")) {
+            return "json";
+        }
+        return "Unsupported file extension: " + filepath.substring(filepath.indexOf("."));
     }
 }
