@@ -50,14 +50,15 @@ public class Plain {
         }
     }
 
-    private static String getFormattedValue(Map<String, Object> map, String key) {
-        if (map.get(key) == null) {
+    public static String getFormattedValue(Map<String, Object> map, String key) {
+        Object value = map.get(key);
+        if (value == null) {
             return null;
         }
-        if (map.get(key).getClass().equals(String.class)) {
-            return "'" + map.get(key) + "'";
+        if (value.getClass().equals(String.class)) {
+            return "'" + value + "'";
         }
-        return (isSimple(map.get(key).getClass())) ? map.get(key).toString() : "[complex value]";
+        return (isSimple(value.getClass())) ? value.toString() : "[complex value]";
     }
 
     private static boolean isSimple(Class<?> checkedClass) {
