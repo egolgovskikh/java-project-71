@@ -4,7 +4,6 @@ run-dist:
 build:
 	./gradlew installDist
 
-
 test:
 	./gradlew test
 

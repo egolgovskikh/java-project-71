@@ -10,14 +10,14 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DifferYmlTest {
-    private final String resourceDirectory = Paths.get("src", "test", "resources").toString();
+    private final String resourceDirectory = Paths.get("src", "test", "resources", "yml").toString();
     private String ymlFile1;
     private String ymlFile2;
 
     @BeforeEach
     public void beforeEach() {
-        ymlFile1 = Paths.get(resourceDirectory, "yml/testFile1.json").toString();
-        ymlFile2 = Paths.get(resourceDirectory, "yml/testFile2.json").toString();
+        ymlFile1 = Paths.get(resourceDirectory, "testFile1.yml").toString();
+        ymlFile2 = Paths.get(resourceDirectory, "testFile2.yml").toString();
     }
 
     @Test

@@ -2,7 +2,6 @@ package hexlet.code;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
@@ -13,6 +12,6 @@ class FormatterTest {
 
     @Test
     void testFormatUnsupportedFormat() {
-        assertThrows(IOException.class, () -> format(Map.of(), Map.of(), Set.of(), "text"));
+        assertThrows(IllegalStateException.class, () -> format(Map.of(), Map.of(), Set.of(), "text"));
     }
 }

@@ -10,14 +10,14 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DifferJsonTest {
-    private final String resourceDirectory = Paths.get("src", "test", "resources").toString();
+    private final String resourceDirectory = Paths.get("src", "test", "resources", "json").toString();
     private String jsonFile1;
     private String jsonFile2;
 
     @BeforeEach
     public void beforeEach() {
-        jsonFile1 = Paths.get(resourceDirectory, "json/testFile1.json").toString();
-        jsonFile2 = Paths.get(resourceDirectory, "json/testFile2.json").toString();
+        jsonFile1 = Paths.get(resourceDirectory, "testFile1.json").toString();
+        jsonFile2 = Paths.get(resourceDirectory, "testFile2.json").toString();
     }
 
     @Test
