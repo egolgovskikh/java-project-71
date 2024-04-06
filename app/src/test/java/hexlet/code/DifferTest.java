@@ -43,13 +43,25 @@ class DifferTest {
     }
 
     @Test
-    void testGenerateYml() throws IOException {
+    void testGenerateYmlStylish() throws IOException {
         String actual = Differ.generate(
                 "src/test/resources/yml/testFile1.yml",
                 "src/test/resources/yml/testFile2.yml",
                 "stylish"
         );
         String expected = new String(Files.readAllBytes(Paths.get("src/test/resources/expectedResultStylish")));
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    void testGenerateYmlJson() throws IOException {
+        String actual = Differ.generate(
+                "src/test/resources/yml/testFile1.yml",
+                "src/test/resources/yml/testFile2.yml",
+                "json"
+        );
+        String expected = new String(Files.readAllBytes(Paths.get("src/test/resources/expectedResultJson.json")));
         assertEquals(expected, actual);
     }
 }
