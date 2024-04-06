@@ -45,12 +45,7 @@ public class Json {
         if (value1 == null && value2 == null) {
             return;
         }
-        if (value1 == null || value2 == null) {
-            comparisonResults.put(key, "updated");
-            return;
-        }
-
-        if (!value1.equals(value2)) {
+        if (value1 == null || !value1.equals(value2)) {
             comparisonResults.put(key, "updated");
         }
     }

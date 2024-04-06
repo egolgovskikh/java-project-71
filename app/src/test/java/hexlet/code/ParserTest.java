@@ -23,9 +23,8 @@ class ParserTest {
             throw new RuntimeException(e);
         }
         Map<String, Object> expected = new HashMap<>();
-        int intValue = 50;
         expected.put("host", "hexlet.io");
-        expected.put("timeout", intValue);
+        expected.put("check", true);
         expected.put("proxy", "123.234.53.22");
         expected.put("follow", false);
 
