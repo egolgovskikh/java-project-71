@@ -21,12 +21,12 @@ public class Parser {
 
     private static ObjectMapper getObjectMapper(String extension) throws IOException {
         if (extension == null) {
-            throw new IOException("Unsupported file extension");
+            throw new IOException("Unsupported file extension: null");
         }
         return switch (extension) {
             case "application/json" -> new ObjectMapper();
             case "application/x-yaml" -> new YAMLMapper();
-            default -> throw new IOException("Unsupported file extension");
+            default -> throw new IOException("Unsupported file extension: " + extension);
         };
     }
 }
